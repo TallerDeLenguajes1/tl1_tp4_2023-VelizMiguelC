@@ -14,6 +14,8 @@ void inicializararreglo(tarea **tareas,int canttareas);
 void cargartareas(tarea **tareas,int canttareas);
 void control(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
 void mostrartareas(tarea **tareas,int canttareas);
+void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
+void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
 
 int main (){
     int canttareas;
@@ -31,6 +33,8 @@ int main (){
     mostrartareas(tareaspend,canttareas);
     printf("-------------Tareas Realizadas-------------\n");
     mostrartareas(tareasrealiz,canttareas);
+    buscartarea(tareaspend,tareasrealiz,canttareas);
+    buscartarea(tareaspend,tareasrealiz,canttareas)
 }
 
 void inicializararreglo(tarea **tareas,int canttareas){
@@ -89,6 +93,51 @@ void mostrartareas(tarea **tareas,int canttareas){
             printf("La tarea Num %d esta en NULL\n", i+1);
         }
         
+        
+    }
+    
+}
+void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas){
+    int id;
+
+    printf("Ingrese el ID de la tarea que busca:");
+    scanf("%d",&id);
+    for (int i = 0; i < canttareas; i++)
+    {
+        if (tareaspend[i] != NULL && tareaspend[i] == id)
+        {
+            printf("La tarea que busca esta en tareas pendiente es la numero %d",i+1);
+            printf("Descripcion de tarea:%s\n",tareaspend[i]->Descripcion);
+            printf("Duracion de la tarea:%d\n",tareaspend[i]->Duracion);
+        }
+        if (tareasrealiz[i] != NULL && tareasrealiz[i] == id)
+        {
+            printf("La tarea que busca esta en tareas realizadas es la numero %d",i+1);
+            printf("Descripcion de tarea:%s\n",tareasrealiz[i]->Descripcion);
+            printf("Duracion de la tarea:%d\n",tareasrealiz[i]->Duracion);
+        }
+        
+    }
+    
+}
+void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas){
+    char *aux;
+    printf("Ingrese la descripcion a buscar");
+    scanf("%s",aux);
+    for (int i = 0; i < canttareas; i++)
+    {
+        if (tareaspend[i] != NULL && strstr(tareaspend[i]->Descripcion,aux) != NULL)
+        {
+            printf("La tarea que busca esta en tareas pendiente es la numero %d",i+1);
+            printf("Descripcion de tarea:%s\n",tareaspend[i]->Descripcion);
+            printf("Duracion de la tarea:%d\n",tareaspend[i]->Duracion);
+        }
+        if (tareasrealiz[i] != NULL && strstr(tareasrealiz[i]->Descripcion,aux) != NULL)
+        {
+            printf("La tarea que busca esta en tareas realizadas es la numero %d",i+1);
+            printf("Descripcion de tarea:%s\n",tareasrealiz[i]->Descripcion);
+            printf("Duracion de la tarea:%d\n",tareasrealiz[i]->Duracion);
+        }
         
     }
     
