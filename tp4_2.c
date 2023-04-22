@@ -14,8 +14,8 @@ void inicializararreglo(tarea **tareas,int canttareas);
 void cargartareas(tarea **tareas,int canttareas);
 void control(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
 void mostrartareas(tarea **tareas,int canttareas);
-void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
-void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
+void buscartareaporid(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
+void buscartareaporchar(tarea **tareaspend,tarea **tareasrealiz,int canttareas);
 
 int main (){
     int canttareas;
@@ -33,8 +33,8 @@ int main (){
     mostrartareas(tareaspend,canttareas);
     printf("-------------Tareas Realizadas-------------\n");
     mostrartareas(tareasrealiz,canttareas);
-    buscartarea(tareaspend,tareasrealiz,canttareas);
-    buscartarea(tareaspend,tareasrealiz,canttareas)
+    buscartareaporid(tareaspend,tareasrealiz,canttareas);
+    buscartareaporchar(tareaspend,tareasrealiz,canttareas);
 }
 
 void inicializararreglo(tarea **tareas,int canttareas){
@@ -97,7 +97,7 @@ void mostrartareas(tarea **tareas,int canttareas){
     }
     
 }
-void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas){
+void buscartareaporid(tarea **tareaspend,tarea **tareasrealiz,int canttareas){
     int id;
 
     printf("Ingrese el ID de la tarea que busca:");
@@ -120,7 +120,7 @@ void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas){
     }
     
 }
-void buscartarea(tarea **tareaspend,tarea **tareasrealiz,int canttareas){
+void buscartareaporchar(tarea **tareaspend,tarea **tareasrealiz,int canttareas){
     char *aux;
     printf("Ingrese la descripcion a buscar");
     scanf("%s",aux);
